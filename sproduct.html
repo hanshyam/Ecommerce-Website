@@ -120,16 +120,17 @@
             <div class="right-nav-tog">
                 <div class="right-nav">
                     <ul>
-                        <li><a href="/index.html">Home</a></li>
-                        <li><a href="/shop.html">Shop</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Contact Us</a></li>
-                        <li><a href="#">
-                                <i class="fa-solid fa-magnifying-glass"></i>
+                        <li><a class="menu-item" href="index.html">Home</a></li>
+                        <li><a class="active" href="shop.html">Shop</a></li>
+                        <li><a class="menu-item" href="#">Blog</a></li>
+                        <li><a class="menu-item" href="#">About</a></li>
+                        <li><a class="menu-item" href="#">Contact Us</a></li>
+                        <li><a class="" href="#">
+                                <i class="fa-solid fa-magnifying-glass menu-item"></i>
                             </a></li>
-                        <li><a href="#">
+                        <li><a href="cart.html">
                                 <i class="fa-solid fa-cart-shopping"></i>
+                                <span class="numpro"></span>
                             </a></li>
                     </ul>
                 </div>
@@ -153,12 +154,16 @@
             <li><a href="#">
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </a></li>
-            <li><a href="#">
+            <li><a href="cart.html">
                     <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="numpro"></span>
                 </a></li>
         </ul>
     </div>
-
+    <div class="search">
+        <input class="search-bar" type="search" placeholder="Search here">
+        <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+    </div>
     <section id="ProductPage">
         <div class="product-img">
             <div class="img-box">
@@ -185,8 +190,8 @@
                     <option value="XXL">XXL</option>
                 </select>
                 <div class="gfw">
-                    <input type="number" placeholder="1">
-                    <button class="btn">ADD TO CART</button>
+                    <input id="numproinput"  type="number" value="1">
+                    <button id="numprobtn" class="btn">ADD TO CART</button>
                 </div>
             </div>
             <div class="jdhf">
@@ -312,10 +317,18 @@
             </div>
         </div>
     </footer>
-
+     <script>
+        let rowimg = document.getElementsByClassName('rowimg')[0];
+        let imgs = rowimg.getElementsByTagName('img');
+        let ppimg = document.getElementsByClassName('pp-img')[0];
+        Array.from(imgs).forEach(e=>{
+            e.addEventListener('click',()=>{
+                ppimg.src = e.src;
+            })
+        })
+     </script>
     <script src="https://kit.fontawesome.com/5515773a3c.js" crossorigin="anonymous"></script>
-    <script src="style.js"></script>
-    <script src="style2.js"></script>
+    <script src="./style.js"></script>
 </body>
 
 </html>

@@ -9,53 +9,63 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
     <style>
-            #Ourproduct {
-                margin-top: 10vh;
-                display: flex;
-                flex-direction: column;
-            }
-                #Ourproduct img {
-                width: 100%;
-                max-height: 50vh;
-            }
-            .navbar{
-                position:sticky;
-                top:0;
-            }
-            .multipage{
-                display:flex;
-                justify-content: flex-start;
-                align-items:center;
-            }
-            .firstpage{
-                padding:2px 9px;
-                border:1px solid black;
-            }
-            .currentpage{
-                padding:2px 9px;
-                border:1px solid black;
-                background-color: black;
-            }
-            .currentpage span a{
-                text-decoration: none;
-                color:rgb(255, 255, 255);
-            }
-            .firstpage span a{
-                text-decoration: none;
-                color: #312d2d;
-            }
-            .currentpage span a{
-                text-decoration: none;
-                color: #312d2d;
-            }
-            .firstpage:hover{
-                background-color: rgb(220, 102, 5);
-                border:1px solid rgb(220, 102, 5);
-                color:white;
-            }
-            .firstpage:hover a{
-                color:white;
-            }
+        #Ourproduct {
+            margin-top: 10vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #Ourproduct img {
+            width: 100%;
+            max-height: 50vh;
+        }
+
+        .navbar {
+            position: sticky;
+            top: 0;
+        }
+
+        .multipage {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        .firstpage {
+            padding: 2px 9px;
+            border: 1px solid black;
+        }
+
+        .currentpage {
+            padding: 2px 9px;
+            border: 1px solid black;
+            background-color: black;
+        }
+
+        .currentpage span a {
+            text-decoration: none;
+            color: rgb(255, 255, 255);
+        }
+
+        .firstpage span a {
+            text-decoration: none;
+            color: #312d2d;
+        }
+
+        .currentpage span a {
+            text-decoration: none;
+            color: #312d2d;
+        }
+
+        .firstpage:hover {
+            background-color: rgb(220, 102, 5);
+            border: 1px solid rgb(220, 102, 5);
+            color: white;
+        }
+
+        .firstpage:hover a {
+            color: white;
+        }
     </style>
 </head>
 
@@ -68,16 +78,17 @@
             <div class="right-nav-tog">
                 <div class="right-nav">
                     <ul>
-                        <li><a href="/index.html">Home</a></li>
-                        <li><a href="/shop.html">Shop</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Contact Us</a></li>
-                        <li><a href="#">
+                        <li><a class="menu-item " href="../index.html">Home</a></li>
+                        <li><a class=" active" href="../shop.html">Shop</a></li>
+                        <li><a class="menu-item " href="#">Blog</a></li>
+                        <li><a class="menu-item " href="#">About</a></li>
+                        <li><a class="menu-item " href="#">Contact Us</a></li>
+                        <li><a class="menu-item " href="#">
                                 <i class="fa-solid fa-magnifying-glass"></i>
                             </a></li>
-                        <li><a href="#">
+                        <li><a class="menu-item " href="../cart.html">
                                 <i class="fa-solid fa-cart-shopping"></i>
+                                <span class="numpro"></span>
                             </a></li>
                     </ul>
                 </div>
@@ -100,12 +111,16 @@
             <li><a href="#">
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </a></li>
-            <li><a href="#">
+            <li><a href="cart.html">
                     <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="numpro"></span>
                 </a></li>
         </ul>
     </div>
-
+    <div class="search">
+        <input class="search-bar" type="search" placeholder="Search here">
+        <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+    </div>
     <section id="OurProduct" class="my">
         <div class="headings">
             <h2 style="margin:10px 0px;">Our Product</h2>
@@ -114,7 +129,7 @@
         </div>
         <div class="row " style="margin-top:3vh;">
             <div class="product">
-                <a href="sproduct.html"><img  src="img/shop/1.jpg" alt=""></a>
+                <a href="sproduct.html"><img src="img/shop/1.jpg" alt=""></a>
                 <div class="star">
                     <i class="fa-solid fa-star"></i>
                     <i class="fa-solid fa-star"></i>
@@ -332,22 +347,22 @@
 
     <div class="compound" style="margin:3vw 0px 5vw 0px;padding-left:6vw;">
         <div class="multipage">
-        <div class="firstpage">
-            <span><a href="#">Previous</a></span>
+            <div class="firstpage">
+                <span><a href="#">Previous</a></span>
+            </div>
+            <div class="currentpage">
+                <span><a href="#">1</a></span>
+            </div>
+            <div class="firstpage">
+                <span><a href="#">2</a></span>
+            </div>
+            <div class="firstpage">
+                <span><a href="#">3</a></span>
+            </div>
+            <div class="firstpage">
+                <span><a href="#">Next</a></span>
+            </div>
         </div>
-        <div class="currentpage">
-            <span><a href="#">1</a></span>
-        </div>
-        <div class="firstpage">
-            <span><a href="#">2</a></span>
-        </div>
-        <div class="firstpage">
-            <span><a href="#">3</a></span>
-        </div>
-        <div class="firstpage">
-            <span><a href="#">Next</a></span>
-        </div>
-    </div>
     </div>
 
     <footer id="footer">
@@ -403,7 +418,7 @@
     </footer>
 
     <script src="https://kit.fontawesome.com/5515773a3c.js" crossorigin="anonymous"></script>
-    <script src="style.js"></script>
+    <script  src="style.js"></script>
 </body>
 
 </html>

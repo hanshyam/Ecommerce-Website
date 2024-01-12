@@ -41,7 +41,23 @@
      #brand img{
       max-width:100%;
    }
-  
+   .search{
+      position: relative;
+      top:13vh;
+      left: 47vw;
+      opacity:0;
+      z-index:-3;
+   }
+   #payment-container .info{
+      flex-direction: column;
+   }
+   .info .address-info{
+      width:100%;
+      margin:10px 0;
+   }
+   .info .payment-info{
+      width: 100%;
+   }
 }
 @media only screen and (max-width:1000px) {
    .row{
@@ -74,4 +90,37 @@
    .product-details{
       margin-top:3vh;
    }
+ #cart{
+   width:96vw;
+ }
+ #cart table thead tr td{
+   padding: 5px;
+   text-align: center;
+   font-size:3vw;
+ }
+ tbody tr td img{
+   width:70%;
+ }
+ tbody tr td input{
+   width: 50%;
+ }
+ #cart-coupon-total{
+   flex-direction: column;
+ }
+ #cart-coupon-total .coupon{
+    margin:20px 0;
+    width: 100%;
+ }
+ .total-bill{
+   width: 100%;
+   margin: 20px 0;
+ }
+ #payment-container{
+   width:90vw;
+   margin-top:0px;
+   position: relative;
+   top:-50px;
+   margin: auto;
+  
+ }
 }

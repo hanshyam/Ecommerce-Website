@@ -41,8 +41,9 @@ h6 {
 
 hr {
   margin:10px 0px;
+  border: none;
   width: 30px;
-  height: 2px;
+  height: 4px;
   background-color: #fb774b;
 }
 .my{
@@ -77,7 +78,6 @@ hr {
 
 
 
-
 /* Navbar */
 .navbar{
   position:fixed;
@@ -106,15 +106,24 @@ hr {
 .right-nav ul li{
    list-style:none;
    margin:auto 20px;
+}.active{
+  color: #fb774b;
+  text-decoration: none;
+  font-size:1.2rem;
 }
-.right-nav ul li a{
+.right-nav ul li .menu-item{
   text-decoration: none;
   font-size:1.2rem;
   color: #464646ed;
 }
-.right-nav ul li a:hover ,
-.right-nav ul li a:active{
-   color: #fb774b;
+.right-nav ul li a:hover{
+  color: #fb774b;
+} 
+
+.numpro{
+  position:absolute;
+  font-size:12px;
+  color: #ff0404;
 }
 .right-nav-tog{
     display:flex;
@@ -168,8 +177,40 @@ font-size:20px;
 .wwrap li a:active{
   color: #fb774b;
 }
-
-
+.search{
+  position: relative;
+  background-color: white;
+  display: flex;
+  top: 9vh;
+  left: 73vw;
+  z-index: -3;
+  opacity:0;
+  width: fit-content;
+  height:4vh;
+  padding:2px;
+}
+.search-bar{
+  font-size: 16px;
+  border: none;
+  outline: none;
+  padding: 5px 12px;
+  margin-right: 7px;
+  border-bottom: 1px solid #464646ed;
+}
+.search-btn {
+  border: none;
+  outline: none;
+  background: white;
+  padding: 2px 5px;
+  color: #464646ed;
+  cursor: pointer;
+}
+.search-btn i{
+  font-size:19px ;
+}
+.search-btn i:hover{
+ color: #fb774b;
+}
 
 #home{
   height:100vh;
@@ -418,4 +459,105 @@ font-size:20px;
 }
 #footer h4{
   color: rgb(222, 222, 222);
+}
+
+
+#cart{
+  margin-top: 10vh;
+
+}
+#cart table{
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  margin: 0;
+  
+}
+#cart table thead{
+  background-color: #fb774b;
+  color: white;
+  font-weight: 700;
+}
+
+#cart table thead tr td{
+  padding: 5px;
+  text-align: center;
+}
+table tbody td{
+   text-align: center;
+   border: 1px solid rgb(163, 160, 160);
+}
+table tbody td i{
+  cursor: pointer;
+}
+tbody tr td img{
+  width: 80px;
+  height: 50px;
+  margin: 10px 0;
+}
+tbody tr td input{
+  width: 20%;
+}
+
+#cart-coupon-total{
+   display: flex;
+   justify-content: space-between;
+   margin:20px 0;
+}
+.coupon{
+  display: flex;
+  flex-direction: column;
+  width: 47%;
+}
+.coupon-top{
+  background-color: #fb774b;
+  
+}
+.coupon-top h5{
+  font-size:14px;
+  font-weight: 700;
+  color: white;
+  padding:5px;
+}
+.coupon-bottom{
+  border: 1px solid rgb(163, 160, 160);
+}
+.coupon-bottom p{
+  font-size: 14px;
+  margin: 10px;
+}
+.coupon-bottom div{
+  display: flex;
+  margin:15px 10px;
+}
+.coupon-bottom div input{
+   padding:5px;
+   font-size:14px;
+   border-radius:3px;
+}
+.coupon-bottom div button{
+   margin-left:10px;
+   font-size:10px;
+   padding:5px 12px;
+   background-color: black;
+   color: white;
+   font-weight: 700;
+   border-radius:3px;
+   outline: none;
+   border: none;
+   cursor: pointer;
+}
+.total-bill{
+  width: 47%;
+}
+.total-bill .coupon-bottom div{
+  width: 85%;
+  display: flex;
+  justify-content: space-between;
+}
+.total-money{
+  width: fit-content;
+}
+.total-bill .coupon-bottom  button{
+  margin: 10px 15px;
 }

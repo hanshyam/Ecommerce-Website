@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecommerce Website</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="compound nav-style">
+            <div class="left-nav">
+                <img src="img/logo1.png" alt="">
+            </div>
+            <div class="right-nav-tog">
+                <div class="right-nav">
+                    <ul>
+                        <li><a class="menu-item" href="/index.html">Home</a></li>
+                        <li><a class="menu-item " href="/shop.html">Shop</a></li>
+                        <li><a class="menu-item " href="#">Blog</a></li>
+                        <li><a class="menu-item " href="#">About</a></li>
+                        <li><a class="menu-item " href="#">Contact Us</a></li>
+                        <li><a class="menu-item " href="#">
+                                <i class="fa-solid fa-magnifying-glass menu-search-btn"></i>
+                            </a></li>
+                        <li><a class=" active" href="/cart.html">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                                <span class="numpro"></span>
+                            </a></li>
+                    </ul>
+                </div>
+                <div class="navtoggle">
+                    <button class="bar-btn">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="togglenavbar">
+        <ul class="wwrap">
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/shop.html">Shop</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">
+                    <i class="fa-solid fa-magnifying-glass menu-search-btn"></i>
+                </a></li>
+            <li><a href="cart.html">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="numpro"></span>
+                </a></li>
+        </ul>
+    </div>
+    <div class="search">
+        <input class="search-bar" type="search" placeholder="Search here">
+        <button class="search-btn" onclick="searrch()"><i class="fa-solid fa-magnifying-glass"></i></button>
+    </div>
+    
+
+    <section id="cart">
+        <div class="compound">
+            <h2>Shopping Cart</h2>
+            <hr class="hr">
+            
+            <div class="cart-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <td>Remove</td>
+                            <td>Image</td>
+                            <td>Product</td>
+                            <td>Price</td>
+                            <td>Quantity</td>
+                            <td>Total</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section id ="cart-coupon-total" class="compound">
+        <div class="coupon">
+           <div class="coupon-top">
+             <h5>Coupon</h5>
+           </div>
+           <div class="coupon-bottom">
+              <p>Enter your coupon code if you have one.</p>
+              <div>
+                 <input type="text" placeholder="Coupon Code">
+                 <button>APPLY COUPON</button>
+              </div>
+           </div>
+        </div>
+        <div class="total-bill">
+           <div class="coupon-top">
+             <h5>CART TOTAL</h5>
+           </div>
+           <div class="coupon-bottom">
+              <div>
+                <p>Total</p>
+                <span class="total-money"></span>
+              </div>
+              <a href="/payment.html" ><button  class="btn">PROCEED TO CHECKOUT</button></a>
+           </div>
+        </div>
+    </section>
+
+
+    <footer id="footer">
+        <div class="compound">
+            <div class="row">
+                <div class="item">
+                    <img src="/img/logo2.png" alt="">
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro ab incidunt delectus dolorum
+                        cumque fugiat! Labore ex nulla unde eius.</p>
+                </div>
+                <div class="item">
+                    <h5>Featured</h5>
+                    <ul>
+                        <li><a href="">Men</a></li>
+                        <li><a href="">women</a></li>
+                        <li><a href="">boys</a></li>
+                        <li><a href="">girls</a></li>
+                        <li><a href="">new arrivals</a></li>
+                        <li><a href="">shoes</a></li>
+                        <li><a href="#clothes">clothes</a></li>
+                    </ul>
+                </div>
+                <div class="item">
+                    <h5>Contact Us</h5>
+                    <div class="info">
+                        <h4>Address</h4>
+                        <p>123 ,DEWAS</p>
+                    </div>
+                    <div class="info">
+                        <h4>Phone</h4>
+                        <p>1234567890</p>
+                    </div>
+                    <div class="info">
+                        <h4>Email</h4>
+                        <p>ABC@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="margin-top:3vh;">
+                <div class="item-II">
+                    <img class="payment" src="./img/payment.png" alt="">
+                </div>
+                <div class="item-II">
+                    <p>copyright © all are reserved.</p>
+                </div>
+                <div class="item-II">
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-linkedin"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        
+        let tbody = document.getElementsByTagName('tbody')[0];
+let cdata = JSON.parse(localStorage.getItem("data"))
+ let row = `<tr></tr>`;
+ for(let i = 0;i<cdata.length;i++)
+ {
+     
+     row += `<tr>
+                 <td><i class="fa-regular fa-trash-can"></i></td>
+                 <td><img src = "${cdata[i].Image}" ></td>
+                 <td>${cdata[i].Product}</td>
+                 <td>${cdata[i].Price}</td>
+                 <td><input type="number" value="${cdata[i].Quantity}"></td>
+                 <td>${cdata[i].Total}</td>
+             </tr>` 
+ }
+ tbody.innerHTML = row;
+
+let index;
+let deleterow = tbody.getElementsByTagName('i');
+
+for (let h = 0; h < tbody.rows.length; h++) {
+    if (deleterow[h]) {
+        deleterow[h].addEventListener('click', () => {
+            cdata.splice(h, 1);
+            localStorage.setItem("data", JSON.stringify(cdata));
+            location.reload();
+        });
+    } else {
+        console.error(`Element at index ${h} is undefined. Check if there are enough elements.`);
+    }
+}
+let totalbill = document.getElementsByClassName('total-money')[0];
+let TotalMoney = 0;
+
+for(let i =0;i<cdata.length;i++)
+{
+  // console.log(cdata)
+  TotalMoney +=  Number(cdata[i].Total);
+  
+}
+let tablequantity = tbody.getElementsByTagName('input');
+for(let i = 0;i<tablequantity.length;i++)
+{
+   tablequantity[i].addEventListener('change',()=>{
+     cdata[i].Quantity = tablequantity[i].value
+     cdata[i].Total = `${Number(cdata[i].Price)*tablequantity[i].value}`;
+     localStorage.setItem("data",JSON.stringify(cdata))
+     location.reload()
+   })
+}
+totalbill.innerHTML = TotalMoney;
+    </script>
+    <script  src="style.js"></script>
+    <script src="https://kit.fontawesome.com/5515773a3c.js" crossorigin="anonymous"></script>
+    
+
+</body>
+</html>

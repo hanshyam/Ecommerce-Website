@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,25 +9,27 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
 </head>
+
 <body>
     <nav class="navbar">
         <div class="compound nav-style">
             <div class="left-nav">
                 <img src="img/logo1.png" alt="">
             </div>
-              <div class="right-nav-tog">
+            <div class="right-nav-tog">
                 <div class="right-nav">
                     <ul>
-                        <li><a href="/index.html">Home</a></li>
-                        <li><a href="/shop.html">Shop</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Contact Us</a></li>
-                        <li><a href="#">
-                                <i class="fa-solid fa-magnifying-glass"></i>
+                        <li><a class=" active" href="../index.html">Home</a></li>
+                        <li><a class="menu-item " href="../shop.html">Shop</a></li>
+                        <li><a class="menu-item " href="#">Blog</a></li>
+                        <li><a class="menu-item " href="#">About</a></li>
+                        <li><a class="menu-item " href="#">Contact Us</a></li>
+                        <li><a class="menu-item " href="#">
+                                <i class="fa-solid fa-magnifying-glass menu-search-btn"></i>
                             </a></li>
-                        <li><a href="#">
+                        <li><a class="menu-item " href="../cart.html">
                                 <i class="fa-solid fa-cart-shopping"></i>
+                                <span class="numpro"></span>
                             </a></li>
                     </ul>
                 </div>
@@ -35,7 +38,6 @@
                         <i class="fa-solid fa-bars"></i>
                     </button>
                 </div>
-              
             </div>
         </div>
     </nav>
@@ -48,14 +50,18 @@
             <li><a href="#">About</a></li>
             <li><a href="#">Contact Us</a></li>
             <li><a href="#">
-                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <i class="fa-solid fa-magnifying-glass menu-search-btn"></i>
                 </a></li>
-            <li><a href="#">
+            <li><a href="cart.html">
                     <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="numpro"></span>
                 </a></li>
         </ul>
     </div>
-    
+    <div class="search">
+        <input class="search-bar" type="search" placeholder="Search here">
+        <button class="search-btn" onclick="searrch()"><i class="fa-solid fa-magnifying-glass"></i></button>
+    </div>
     <section id="home">
         <div class="compound homebox">
             <h4>NEW ARRIVAL</h4>
@@ -64,7 +70,7 @@
             <button class="btn">SHOP NOW</button>
         </div>
     </section>
-    
+
     <section id="brand" class="my">
         <div class="compound">
             <img src="img/brand/1.png" alt="">
@@ -415,7 +421,7 @@
         </div>
     </footer>
     <script src="https://kit.fontawesome.com/5515773a3c.js" crossorigin="anonymous"></script>
-    <script src="style.js"></script>
+    <script  src="style.js"></script>
 </body>
 
 </html>

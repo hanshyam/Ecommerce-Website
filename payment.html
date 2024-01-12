@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecommerce Website</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: rgb(211, 94, 52);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 100vw;
+            margin-top:100px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        #payment-container {
+            width: 40vw;
+            background-color: #fff;
+           padding: 15px;
+            display: flex;
+            flex-direction: column;
+            margin: auto;
+        }
+       #payment-container .info{
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+        }
+        .info .address-info{
+            width: 47%;
+        }
+        .input-box{
+            display: flex;
+            flex-direction: column;
+            margin: 10px 0;
+        }
+        .input-box span{
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+        .input-box input{
+            font-size: 12px;
+            padding: 10px;
+        }
+        .state-pin{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        .left{
+            display: flex;
+            flex-direction: column;
+            width: 48.5%;
+        }
+        h5{
+            font-size:15px;
+        }
+        .info .payment-info{
+           width:49%;
+        }
+        img{
+            width: 195px;
+            cursor: pointer;
+        }
+        button{
+            padding: 10px 0;
+            font-weight: 700;
+            border: none;
+            border-radius: 2px;
+            outline: none;
+            color: #fff;
+            background-color: coral;
+            cursor: pointer;
+        }
+        button:hover{
+            opacity: 0.7;
+        }
+        .div-successful{
+           
+            background-color:rgb(199, 176, 167);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            margin: auto;
+            border-radius: 10px;
+            padding: 0 15px;
+            visibility:hidden;
+            transition: 2s ease-in;
+            transform: translateY(-300px);
+        }
+        .div-successful i{
+            margin-left:5px;
+        }
+        .addblur{
+            filter: blur(3px);
+           -webkit-filter: blur(3px);
+        }
+    </style>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+    <div id="payment-container" class="">
+        <div class="info">
+            <div class="address-info">
+               <h5>BILLING ADDRESS</h5>
+               <div class="input-box">
+                  <span>Full Name:</span>
+                  <input type="text" placeholder="Name">
+               </div>
+               <div class="input-box">
+                  <span>Email:</span>
+                  <input type="email" placeholder="Example@gmail.com">
+               </div>
+               <div class="input-box">
+                  <span>Address:</span>
+                  <input type="text" placeholder="Room-street-locality">
+               </div>
+               <div class="input-box">
+                  <span>City:</span>
+                  <input type="text" placeholder="City">
+               </div>
+               <div class="state-pin">
+                  <div class="left">
+                    <div class="input-box">
+                        <span>State:</span>
+                        <input type="text" placeholder="State Name">
+                     </div>
+                  </div>
+                  <div class="left">
+                    <div class="input-box">
+                        <span>Pin Code:</span>
+                        <input type="number" placeholder="123456">
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="payment-info">
+                <h5>PAYMENT</h5>
+               <div class="input-box">
+                  <span>ACCEPTED CARD:</span>
+                  <img src="/img/payment.png">
+               </div>
+               <div class="input-box">
+                  <span>Name On Card:</span>
+                  <input type="text" placeholder="Name">
+               </div>
+               <div class="input-box">
+                  <span>Credit Card Number:</span>
+                  <input type="number" placeholder="0000-0000-0000-0000">
+               </div>
+               <div class="input-box">
+                  <span>Exp Month:</span>
+                  <input type="text" placeholder="January">
+               </div>
+               <div class="state-pin">
+                  <div class="left">
+                    <div class="input-box">
+                        <span>Exp Year:</span>
+                        <input type="number" placeholder="2022">
+                     </div>
+                  </div>
+                  <div class="left">
+                    <div class="input-box">
+                        <span>CVV:</span>
+                        <input type="number" placeholder="123">
+                     </div>
+                  </div>
+               </div> 
+            </div>
+        </div>
+        <button type="submit" onclick="successful()">Proceed To Checkout</button>
+    </div>
+    <div class="div-successful">
+        <h4>Your Payment Successful</h4>
+        <i class="fa-solid fa-circle-check"></i>
+    </div>
+    <script src="style.js"></script>
+    <script src="https://kit.fontawesome.com/5515773a3c.js" crossorigin="anonymous"></script>
+    <script>
+      function successful(){
+        let Paymentbox = document.getElementById('payment-container');
+        Paymentbox.classList.add('addblur')
+        let divsucc = document.getElementsByClassName('div-successful')[0];
+        divsucc.style.visibility = "visible";
+        divsucc.style.transform = "translateY(-340px)";
+      }
+    </script>
+</body>
+    
+</html>
